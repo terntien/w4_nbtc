@@ -1,0 +1,16 @@
+.conn-info-tower {
+    width: 400px;
+    margin: 17px 0px 0px 5px;
+}
+.gm-ui-hover-effect > img {
+    width: 22px !important;
+    height: 22px !important;
+    margin: 8px -1px -1px !important;
+}
+.card-header{
+    background-color: #289dd3 !important;
+}
+a#link{
+    text-decoration: none;
+    color: azure;
+}
