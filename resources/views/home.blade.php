@@ -11,10 +11,10 @@
                                   <div class="offset-md-5"></div>
                                       <div class="offset-md-2"></div>
                                       <div class="col-md-12 map">
-                                        <div id="floating-panel">
-                                            <input onclick="removeLines();" type=button value="Remove line">
-                                        </div>
-                                        <div id="map"></div>                                           
+                                        
+                                        <div id="map"></div>  
+                                        <div id="map_canvas">      
+                                                                           
                                       </div>
                                   </div>
                               </div>
@@ -25,13 +25,10 @@
           </div>
       </section>
   </div>
-
+    
 <script>
-      
-      var poly;
-      var map;
-      var flightPath;
 
+      var flightPath;
         var custom = {
             0: {
                 label: 'null',
@@ -47,27 +44,19 @@
             },
             4: {
                 label: 'FM',
+            },
+            5: {
+                label: 'TRUE'
             }
         };
 
         function initMap() {
           var map = new google.maps.Map(document.getElementById('map'), {
               center: {lat: 16.5178, lng: 104.121},
-              zoom: 7
+              zoom: 7,
+              mapTypeId: google.maps.MapTypeId.ROADMAP,
+              mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
           });
-
-            poly = new google.maps.Polyline({
-            strokeColor: '#FF0000',
-            strokeOpacity: 1.0,
-            strokeWeight: 3
-          });
-
-          poly.setMap(map);
-
-          // เพิ่มเส้นเมื่อคลิก
-          map.addListener('click', addLatLng);
-
-
           var infoWindow = new google.maps.InfoWindow;
           // Change this depending on the name of your PHP or XML file
           downloadUrl('/xml-marker', function(data) {
@@ -91,7 +80,6 @@
                 var point = new google.maps.LatLng(
                     parseFloat(markerElem.getAttribute('lat')),
                     parseFloat(markerElem.getAttribute('lng')));
-
                 var infowincontent = `
                 <div class="conn-info-tower">
                   <table class="table" >
@@ -119,7 +107,6 @@
                         <th scope="row" class="text-right">วันขอใบอนุญาต</th>
                         <td>${license_date}</td>
                       </tr>
-
                     </tbody>
                   </table>
                 </div>
@@ -129,29 +116,16 @@
                     map: map,
                     position: point,
                     label: icon.label
-
                 });
-
                 marker.addListener('click', function() {
                   infoWindow.setContent(infowincontent);
                   infoWindow.open(map, marker);
                 });
             });
         });
+
       }
 
-      function addLatLng(event) {
-        var path = poly.getPath();
-        path.push(event.latLng);
-
-        // Add a new marker at the new plotted point on the polyline.
-        var marker = new google.maps.Marker({
-          position: event.latLng.point,
-          map: map
-        });
-      }
-
-      
       function downloadUrl(url, callback) {
         var request = window.ActiveXObject ?
             new ActiveXObject('Microsoft.XMLHTTP') :
@@ -170,5 +144,5 @@
       function doNothing() {}
 </script>
 
-<script async defer src="{{ URL::asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyCkgXuCpP3BauX9EIlnHlqtC8IP1SUoYbw&callback=initMap') }}" asyncdefer></script>
+<script async defer src="{{ asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyBJNL4UPbFH1CroiFiCcYRXPTyjy1q9mIA&callback=initMap') }}" type="text/javascript" asyncdefer></script>
 @endsection

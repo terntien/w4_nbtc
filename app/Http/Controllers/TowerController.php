@@ -16,12 +16,13 @@ class TowerController extends Controller
     }
     
 
-
     public function selectCus(){
-        $list=DB::table('customer')->get();
-        $nets=DB::table('network')->get();
+        $list=DB::table('customers')->get();
+        $nets=DB::table('networks')->get();
         return view('towers.create',compact('list','nets') );
     }
+
+   
 
     public function create()
     {
@@ -61,16 +62,17 @@ class TowerController extends Controller
 
     public function edit($id)
     {
-        $list=DB::table('customer')->get();
-        $nets=DB::table('network')->get();
+       
+        $list=DB::table('customers')->get();
+        $nets=DB::table('networks')->get();
         $tower = Tower::find($id);
-        return view('towers.edit', compact('tower', 'list','nets')); 
+        return view('towers.edit' ,compact('tower', 'list','nets')); 
     }
 
     
     public function update(Request $request, $id)
     {
-    
+       
 
         $tower = Tower::find($id);
         $tower->towers_customer = $request->get('customer_select');

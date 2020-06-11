@@ -41,15 +41,7 @@
                                                         <td>{{$row->detail}}</td>
                                                         <td>{{$row->user}}</td>
                                                         <td>{{$row->address}}</td>
-                                                        <td style="width: 20px"> 
-                                                            <a href="{{ route('reports.show',$row->id)}}">
-                                                                <i class="fa fa-search" aria-hidden="true" data-toggle="modal" data-target="#exampleModalLong"> </i>
-                                                            </a>
-                                                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog">
-                                                        </td>
-                                                        <td id="btn" style="width: 20px">
-                                                            <a href="{{ route('towers.edit',$row->id)}}" class="btn btn-primary">Edit</a>
-                                                        </td>
+                                                        
                                                         <td id="btn" style="width: 20px">
                                                             <form action="{{ route('towers.destroy', $row->id)}}" method="POST">
                                                                 @csrf

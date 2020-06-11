@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
+use App\Customer;
 class CustomerController extends Controller
 {
     public function index()
     {
-        $customer = customer::all();
+        $customer = Customer::all();
         return view('customers.index', compact('customer'));
     }
 
@@ -21,12 +20,10 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
-        $customer = new customer();
+        $customer = new Customer();
    
         $customer->name = $request->input('name');
         $customer->code = $request->input('code');
-       
-       
         $customer->save();
         return redirect('/customers')->with('success', ' saved!');
     }

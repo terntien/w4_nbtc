@@ -38,10 +38,6 @@
                         <form method="POST" action="{{ route('towers.store') }}">
                         @csrf
                             <div class="card-body ">
-                                <div class="form-group">
-                                    <label for="towers_image">เพิ่มรูปภาพของเสา:</label>
-                                    <!-- <input type="file" class="form-control-file" name="towers_image" id="towers_image" >  -->
-                                </div>
                         
                                  <div class="form-group">
                                     <label>ผู้ให้บริการ :</label>

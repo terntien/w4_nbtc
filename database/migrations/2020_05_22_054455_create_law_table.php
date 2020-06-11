@@ -13,7 +13,7 @@ class CreateLawTable extends Migration
      */
     public function up()
     {
-        Schema::create('law', function (Blueprint $table) {
+        Schema::create('laws', function (Blueprint $table) {
             $table->id();
             $table->string('heading');
             $table->string('url');
@@ -28,6 +28,6 @@ class CreateLawTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('law');
+        Schema::dropIfExists('laws');
     }
 }

@@ -39,25 +39,13 @@
   
   <style>
     #map {
-        height: 100%;
+      height: 100%;
     }
     .map{
     height: 700px;
     margin-bottom: 30px;
-  }
-  #floating-panel {
-        position: absolute;
-        top: 10px;
-        left: 25%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-      }
+    }
+
 
     </style>
 </head>
@@ -138,19 +126,13 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link ">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>แบบฟอร์มขอใบอนุญาต</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="./customer.php" class="nav-link">
+                  <a href="{{ url ('customers') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>ผู้ให้บริการ</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link ">
+                    <a href="{{ url ('networks') }}" class="nav-link ">
                     <i class="far fa-circle nav-icon"></i>
                     <p>เครือข่ายร่วม</p>
                   </a>
@@ -164,10 +146,26 @@
               </ul>
             </li>
             <li class="nav-item has-treeview">
+              <a href="{{ url ('laws') }}" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                  กฎหมายที่เกี่ยวข้อง
+                </p>
+              </a>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="{{ url ('licenses') }}" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                  แบบฟอร์มขอใบอนุญาต
+                </p>
+              </a>
+            </li>
+            <li class="nav-item has-treeview">
               <a href="{{ url ('problem') }}" class="nav-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
-                  ประเภทปัญหาเสา
+                  ประเภทการแจ้งปัญหา
                 </p>
               </a>
             </li>
@@ -296,6 +294,7 @@
 <script src="{{ asset('../assets/js/adminlte.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('../assets/js/demo.js') }}"></script>
+
 </body>
 </html>
  

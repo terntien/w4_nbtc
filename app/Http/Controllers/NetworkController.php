@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Network;
 use Illuminate\Http\Request;
 
 class NetworkController extends Controller
 {
     public function index()
     {
-        $network = network::all();
+        $network = Network::all();
         return view('networks.index', compact('network'));
     }
 
@@ -21,7 +21,7 @@ class NetworkController extends Controller
 
     public function store(Request $request)
     {
-        $network = new network();
+        $network = new Network();
    
         $network->name = $request->input('name');
         $network->code = $request->input('code');

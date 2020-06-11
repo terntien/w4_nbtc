@@ -13,7 +13,7 @@ class CreateFormLicenseTable extends Migration
      */
     public function up()
     {
-        Schema::create('license', function (Blueprint $table) {
+        Schema::create('licenses', function (Blueprint $table) {
             $table->id();
             $table->string('heading');
             $table->string('url');
@@ -28,6 +28,6 @@ class CreateFormLicenseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('license');
+        Schema::dropIfExists('licenses');
     }
 }

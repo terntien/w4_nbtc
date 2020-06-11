@@ -13,7 +13,7 @@ class CreateTowersNetworkTable extends Migration
      */
     public function up()
     {
-        Schema::create('network', function (Blueprint $table) {
+        Schema::create('networks', function (Blueprint $table) {
             $table->id();
             $table->string('code');
             $table->string('name');
@@ -28,6 +28,6 @@ class CreateTowersNetworkTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('network');
+        Schema::dropIfExists('networks');
     }
 }

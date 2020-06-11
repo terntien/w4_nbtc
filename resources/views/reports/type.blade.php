@@ -38,7 +38,7 @@
                                         @method('PATCH') 
                                          @foreach($problem as $row)
                                             <div class="form-group">
-                                                <label for="towers_parish">หัวข้อปัญหาเกี่ยวกับเสา :</label>
+                                                <label for="report_tower">หัวข้อปัญหาเกี่ยวกับเสา :</label>
                                                 {{ $row->name }}
                                             </div>
                                         @endforeach

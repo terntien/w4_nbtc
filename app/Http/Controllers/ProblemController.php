@@ -28,7 +28,7 @@ class ProblemController extends Controller
         
         $problem->name = $request->input('name');
         $problem->save();
-        return view('reports.type')->with('success','บันทึกข้อมูลสำเร็จ');
+        return redirect('/problem')->with('success', 'เพิ่มข้อมูลเสาสำเร็จ');
     }
 
     
