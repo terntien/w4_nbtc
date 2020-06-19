@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Law;
-
 class LawController extends Controller
 {
-    public function index()
+     public function index()
     {
         $law = Law::all();
         return view('laws.index', compact('law'));

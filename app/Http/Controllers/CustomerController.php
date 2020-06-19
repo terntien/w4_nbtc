@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Customer;
 class CustomerController extends Controller
 {
-    public function index()
+     public function index()
     {
         $customer = Customer::all();
         return view('customers.index', compact('customer'));
@@ -22,8 +23,8 @@ class CustomerController extends Controller
     {
         $customer = new Customer();
    
-        $customer->name = $request->input('name');
-        $customer->code = $request->input('code');
+        $customer->namecus = $request->input('namecus');
+        $customer->codecus = $request->input('codecus');
         $customer->save();
         return redirect('/customers')->with('success', ' saved!');
     }
@@ -53,15 +54,15 @@ class CustomerController extends Controller
     {
         
         $request->validate([
-            'name'    => 'required',
-            'code'    => 'required',
+            'namecus'    => 'required',
+            'codecus'    => 'required',
             
         ]);
 
         $customer = Customer::find($id);
        
-        $customer->name = $request->get('name');
-        $customer->code = $request->get('code');
+        $customer->namecus = $request->get('namecus');
+        $customer->codecus = $request->get('codecus');
         
         $customer->save();
 

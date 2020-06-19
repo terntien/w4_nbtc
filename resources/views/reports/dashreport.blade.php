@@ -43,7 +43,7 @@
                                                         <td>{{$row->address}}</td>
                                                         
                                                         <td id="btn" style="width: 20px">
-                                                            <form action="{{ route('towers.destroy', $row->id)}}" method="POST">
+                                                            <form action="{{ route('reports.destroy', $row->id)}}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button class="btn" type="submit"><i class="fa fa-trash-o" aria-hidden="true" style="font-size:24px; color:#C0392B;"></i></button>

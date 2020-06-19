@@ -9,8 +9,8 @@ Route::resource('reports', 'ReportController');
 Route::resource('problem', 'ProblemController');
 Route::resource('networks', 'NetworkController');
 Route::resource('licenses', 'LicenseController');
+Route::resource('contacts', 'ContactController');
 Route::resource('customers', 'CustomerController');
-
 
 Auth::routes();
 
@@ -20,12 +20,8 @@ Route::get('reports/create', 'ReportController@selectCus');
 // Route::get('/home', 'TowerController@selectmarker'); 
 Route::get('xml-marker', 'TowerController@xml'); //เรียกใช้ข้อมูล xml 
 
-
-
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('reports/type', function(){
-//     return view('reports.type');
-// });
+
 // Route::get('type', 'RroblemController@index');
 // Route::get('home', 'TowerController@marker');
 // Route::get('/mapdata', 'MapController@show');

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Network extends Model
 {
     protected $fillable = [
-        'code',
-        'name'
+        'codenet',
+        'namenet'
     ];
 }

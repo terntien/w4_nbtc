@@ -1,17 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
 use App\Tower;
+use App\Customer;
 use DB;
+use Illuminate\Http\Request;
 
 class TowerController extends Controller
 {
-    
-
-    public function index()
+     public function index()
     {
-        $tower = Tower::all();
+        // $tower = Tower::all();
+        $tower = DB::table('towers')
+                    ->join('customers', 'customers.id','=','towers.towers_customer')
+                        ->join('networks', 'networks.id' , '=' , 'towers.towers_network')
+                        ->get();
+        // $tower = DB::table('towers')
+        //             ->join('customers', 'customers.id' , '=' , 'towers.towers_customer')
+        //                 ->join('networks', 'networks.id' , '=' , 'towers.towers_network')
+        //                     ->get();
         return view('towers.index', compact('tower'));
     }
     
@@ -28,6 +35,7 @@ class TowerController extends Controller
     {
         return view('towers.create');
     }
+   
 
 
     public function store(Request $request)
@@ -55,25 +63,24 @@ class TowerController extends Controller
     public function show($id)
     {
         $tower = Tower::find($id);
-        return view('towers.show', compact('tower'));    }
+        return view('towers.show', compact('tower'));    
+    }
 
     
 
 
     public function edit($id)
     {
-       
         $list=DB::table('customers')->get();
         $nets=DB::table('networks')->get();
         $tower = Tower::find($id);
+        
         return view('towers.edit' ,compact('tower', 'list','nets')); 
     }
 
     
     public function update(Request $request, $id)
     {
-       
-
         $tower = Tower::find($id);
         $tower->towers_customer = $request->get('customer_select');
         $tower->towers_network = $request->get('network_select');

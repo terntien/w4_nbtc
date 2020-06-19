@@ -14,12 +14,8 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.0",
-        "alexpechkarev/google-maps": "7.1",
-        "rackspace/php-opencloud": "dev-master"
-       
+        "laravel/ui": "^2.0"
     },
-   
     "require-dev": {
         "facade/ignition": "^2.0",
         "fzaninotto/faker": "^1.9.1",

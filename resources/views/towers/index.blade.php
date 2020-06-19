@@ -26,33 +26,33 @@
                                                 <thead>
                                                     <tr>
                                                     <th>รหัสใบอนุญาต</th>
-                                                    <th>ประเภทใบที่ตั้ง</th>
-                                                    <th>กำลังส่ง</th>
+                                                    <th>เครือข่าย</th>
+                                                    <th>เครือข่ายร่วม</th>
                                                     <th>จังหวัด</th>
-                                                    <th>Latitude</th>
-                                                    <th>Longtitude </th>
+                                                    <th>รหัสไปรษณีย์ </th>
+                                                    <th>วันที่ขอใบอนุญาต</th>
                                                     <th colspan = 3>Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                @foreach($tower as $tower)
+                                                @foreach($tower as $row)
                                                     <tr> 
-                                                        <td style="width: 180px">{{$tower->towers_license_code}}</td>
-                                                        <td style="width: 180px">{{$tower->towers_typeleaf}}</td>
-                                                        <td style="width: 180px">{{$tower->towers_sending}}</td>
-                                                        <td style="width: 180px">{{$tower->towers_pravince}}</td>
-                                                        <td style="width: 180px">{{$tower->LATDEG}}</td>
-                                                        <td style="width: 180px">{{$tower->LONGDEG}}</td>
+                                                        <td style="width: 180px">{{$row->towers_license_code}}</td>
+                                                        <td style="width: 180px">{{$row->namecus}}</td>
+                                                        <td style="width: 180px">{{$row->namenet}}</td>
+                                                        <td style="width: 180px">{{$row->towers_pravince}}</td>
+                                                        <td style="width: 180px">{{$row->towers_code}}</td>
+                                                        <td style="width: 180px">{{$row->towers_license_date}}</td>
                                                         <td style="width: 20px"> 
-                                                            <a href="{{ route('towers.show',$tower->id)}}">
+                                                            <a href="{{ route('towers.show',$row->id)}}">
                                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                                             </a>
                                                         </td>
                                                         <td id="btn" style="width: 20px">
-                                                            <a href="{{ route('towers.edit',$tower->id)}}" class="btn btn-primary">Edit</a>
+                                                            <a href="{{ route('towers.edit',$row->id)}}" class="btn btn-primary">Edit</a>
                                                         </td>
                                                         <td id="btn" style="width: 20px">
-                                                            <form action="{{ route('towers.destroy', $tower->id)}}" method="POST">
+                                                            <form action="{{ route('towers.destroy', $row->id)}}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button class="btn" type="submit"><i class="fa fa-trash-o" aria-hidden="true" style="font-size:24px; color:#C0392B;"></i></button>

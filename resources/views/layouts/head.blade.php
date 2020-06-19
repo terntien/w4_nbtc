@@ -38,12 +38,28 @@
 
   
   <style>
+    #map_canvas {
+      height: 100%;
+    }
     #map {
       height: 100%;
     }
     .map{
     height: 700px;
     margin-bottom: 30px;
+    }
+    #floating-panel {
+      position: absolute;
+      top: 10px;
+      left: 25%;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      text-align: center;
+      font-family: 'Roboto','sans-serif';
+      line-height: 30px;
+      padding-left: 10px;
     }
 
 
@@ -81,10 +97,10 @@
   <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
-        <img src="../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <a href="{{url ('home')}}" class="brand-link">
+        <img src="{{ url('../assets/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">Admin</span>
+        <span class="brand-text font-weight-light">NBTC</span>
       </a>
 
       <!-- Sidebar -->
@@ -114,9 +130,9 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href=" {{ url ('home') }}" class="nav-link ">
+                    <a href=" {{ url ('/home') }}" class="nav-link ">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>หน้าแรก</p>
+                      <p>แผนที่</p>
                     </a>
                   </li>
                 <li class="nav-item">
@@ -171,30 +187,6 @@
             </li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas  fa-user"></i>
-                <p>
-                  ผู้ใช้งาน
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>ผู้ใช้งานทั่วไป</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>ผู้ดูแลระบบ</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-exclamation-circle"></i>
                 <p>
                   การแจ้งปัญหา
@@ -219,7 +211,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a href="./contact.php" class="nav-link">
+              <a href="{{ url ('contacts') }}" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   ติดต่อเรา
@@ -277,6 +269,7 @@
 <!-- jQuery -->
 <script src="{{ asset('../assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
+  
 <script src="{{ asset('../assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <script>
   $.widget.bridge('uibutton', $.ui.button)
@@ -291,6 +284,7 @@
 <!-- overlayScrollbars -->
 <script src="{{ asset('../assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
+
 <script src="{{ asset('../assets/js/adminlte.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('../assets/js/demo.js') }}"></script>

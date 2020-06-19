@@ -39,15 +39,11 @@
                         @csrf
                             <div class="card-body ">
                                 <div class="form-group">
-                                    <label for="towers_image">เพิ่มรูปภาพของเสา:</label>
-                                    <!-- <input type="file" class="form-control-file" name="towers_image" id="towers_image" >  -->
-                                </div>
-                               
-                                <div class="form-group">
                                     <label>ผู้ให้บริการ :</label>
                                     <select class="form-control" name="customer_select">
                                         @foreach($list as $row)
-                                            <option value="{{ $row->id }}" {{$row->id == $row->id  ? 'selected' : ''}}>{{$row->name}}</option>
+                                            <option value="{{ $row->id }}" {{$row->id == $tower->towers_customer  ? 'selected' : ''}}>  
+                                                {{$row->codecus}} : {{$row->namecus}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -56,9 +52,12 @@
                                 <div class="form-group">
                                     <label>เครือข่ายร่วม :</label>
                                     <select class="form-control" name="network_select">
+                                    
                                         @foreach($nets as $row)
-                                            <option value="{{$row->id}}" selected>{{$row->name}}</option>
+                                            <option value="{{ $row->id }}" {{$row->id == $tower->towers_network  ? 'selected' : ''}}>  
+                                                {{$row->codenet}} : {{$row->namenet}}</option>
                                         @endforeach
+                             
                                     </select>
                             
                                 </div>

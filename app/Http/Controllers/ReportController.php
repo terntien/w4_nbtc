@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ReportController extends Controller
 {
     
-    public function index()
+  public function index()
     {
 
         $report = Report::all();
@@ -74,11 +74,10 @@ class ReportController extends Controller
     
     public function destroy($id)
     {
-        //
+        $report = Report::find($id);
+        $report->delete();
+
+        return redirect('/reports')->with('success','ลบข้อมุลการแจ้งปัญหาสำเร็จ');
     }
-
-    
-
-
 
 }

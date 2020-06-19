@@ -1,6 +1,5 @@
 @extends('layouts.head')
 @section('content')
-  <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
@@ -44,7 +43,7 @@
                                     <select class="form-control customer_select" name="customer_select" id="customer_select">
                                         <option value="">เลือกผู้ให้บริการ</option>
                                         @foreach($list as $row)
-                                            <option value="{{$row->id}}">{{$row->name}}</option>
+                                            <option value="{{$row->id}}">{{$row->namecus}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -55,7 +54,7 @@
                                     <select class="form-control network_select" name="network_select" id="network_select">
                                     <option value="">เลือกเครือข่ายร่วม</option>
                                         @foreach($nets as $row)
-                                            <option value="{{$row->id}}">{{$row->name}}</option>
+                                            <option value="{{$row->id}}">{{$row->namenet}}</option>
                                         @endforeach
                                     </select>
                                 </div>

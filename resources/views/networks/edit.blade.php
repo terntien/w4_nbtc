@@ -34,18 +34,18 @@
                             </ul>
                         </div><br />
                         @endif
-                        <form method="POST" action="{{ route('licenses.update', $license->id) }}">
+                        <form method="POST" action="{{ route('networks.update', $network->id) }}">
                         @method('PATCH') 
                         @csrf
                             <div class="card-body ">
                                 <div class="form-group col-md-12">
                                     <label for="code">รหัสเครือข่ายร่วม :</label>
-                                    <input type="text" class="form-control" name="code" value="{{ $license->code }}" required>
+                                    <input type="text" class="form-control" name="codenet" value="{{ $network->codenet }}" required>
                                 </div>
                                 
                                 <div class="form-group col-md-12">
                                     <label for="name">เครือข่ายร่วม :</label>
-                                    <input type="text" class="form-control" name="name" value="{{ $license->name }}" require>
+                                    <input type="text" class="form-control" name="namenet" value="{{ $network->namenet }}" require>
                                 </div>
                             </div>
                             <div class="card-footer">

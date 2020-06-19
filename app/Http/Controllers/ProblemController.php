@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 use App\Problem;
 use DB;
-
 use Illuminate\Http\Request;
 
 class ProblemController extends Controller
 {
-    
     public function index()
     {
         $problem = Problem::all();

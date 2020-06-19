@@ -41,11 +41,11 @@
                             <div class="card-body">
                                 <div class="form-group">
                                 <label for="code">รหัสผู้ให้บริการ :</label>
-                                <input type="text" class="form-control" name="code" placeholder="รหัสผู้ให้บริการ" required>
+                                <input type="text" class="form-control" name="codecus" placeholder="รหัสผู้ให้บริการ" required>
                                 </div>
                                 <div class="form-group">
                                 <label for="name">ผู้ให้บริการ :</label>
-                                <input type="text" class="form-control" name="name" placeholder="ผู้ให้บริการ" required>
+                                <input type="text" class="form-control" name="namecus" placeholder="ผู้ให้บริการ" required>
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -79,8 +79,8 @@
                                         <tbody>
                                         @foreach($customer as $row)
                                             <tr> 
-                                                <td style="width: 180px">{{$row->code}}</td>
-                                                <td style="width: 180px">{{$row->name}}</td>
+                                                <td style="width: 180px">{{$row->codecus}}</td>
+                                                <td style="width: 180px">{{$row->namecus}}</td>
                                                                   
                                                 <td id="btn" style="width: 20px">                      
                                                 <form action="{{ route('customers.destroy', $row->id)}}" method="POST">

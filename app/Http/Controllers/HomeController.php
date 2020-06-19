@@ -24,8 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $tower = Tower::all();
-        return view('home',compact('tower'));
+        $tower = DB::table('towers')
+                    ->join('customers', 'customers.id','=','towers.towers_customer')
+                        ->get();
+        return view('/home',compact('tower'));
     }
 
 }

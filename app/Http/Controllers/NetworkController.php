@@ -22,10 +22,8 @@ class NetworkController extends Controller
     public function store(Request $request)
     {
         $network = new Network();
-   
-        $network->name = $request->input('name');
-        $network->code = $request->input('code');
-       
+        $network->namenet = $request->input('namenet');
+        $network->codenet = $request->input('codenet');
        
         $network->save();
         return redirect('/networks')->with('success', ' saved!');
@@ -56,15 +54,15 @@ class NetworkController extends Controller
     {
         
         $request->validate([
-            'name'     => 'required',
-            'code'    => 'required',
+            'namenet'     => 'required',
+            'codenet'    => 'required',
             
         ]);
 
         $network = Network::find($id);
         // $tower->image =  $request->get('image');
-        $network->name = $request->get('name');
-        $network->code = $request->get('code');
+        $network->namenet = $request->get('namenet');
+        $network->codenet = $request->get('codenet');
         
         $network->save();
 
@@ -72,12 +70,7 @@ class NetworkController extends Controller
     
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function destroy($id)
     {
         $network = Network::find($id);

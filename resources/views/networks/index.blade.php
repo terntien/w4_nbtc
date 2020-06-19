@@ -41,11 +41,11 @@
                             <div class="card-body">
                                 <div class="form-group">
                                 <label for="code">รหัสเครือข่ายร่วม :</label>
-                                <input type="text" class="form-control" name="code" placeholder="รหัสเครือข่ายร่วม" required>
+                                <input type="text" class="form-control" name="codenet" placeholder="รหัสเครือข่ายร่วม" required>
                                 </div>
                                 <div class="form-group">
                                 <label for="name">เครือข่ายร่วม :</label>
-                                <input type="text" class="form-control" name="name" placeholder="เครือข่ายร่วม" required>
+                                <input type="text" class="form-control" name="namenet" placeholder="เครือข่ายร่วม" required>
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -79,8 +79,8 @@
                                         <tbody>
                                         @foreach($network as $row)
                                             <tr> 
-                                                <td style="width: 180px">{{$row->code}}</td>
-                                                <td style="width: 180px">{{$row->name}}</td>
+                                                <td style="width: 180px">{{$row->codenet}}</td>
+                                                <td style="width: 180px">{{$row->namenet}}</td>
                                                 
                                                 <td id="btn" style="width: 20px">                        
                                                 <a href="{{ route('networks.edit',$row->id)}}" class="btn btn-primary">Edit</a>                           

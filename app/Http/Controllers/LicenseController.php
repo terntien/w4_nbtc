@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\License;
 use DB;
-
 class LicenseController extends Controller
 {
     public function index()
@@ -73,12 +72,7 @@ class LicenseController extends Controller
     
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         $license = License::find($id);

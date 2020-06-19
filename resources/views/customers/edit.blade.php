@@ -40,12 +40,12 @@
                             <div class="card-body ">
                                 <div class="form-group col-md-12">
                                     <label for="code">รหัสผู้ให้บริการ :</label>
-                                    <input type="text" class="form-control" name="code" value="{{ $license->code }}" required>
+                                    <input type="text" class="form-control" name="code" value="{{ $license->codenet }}" required>
                                 </div>
                                 
                                 <div class="form-group col-md-12">
                                     <label for="name">ผู้ให้บริการ :</label>
-                                    <input type="text" class="form-control" name="name" value="{{ $license->name }}" require>
+                                    <input type="text" class="form-control" name="name" value="{{ $license->namenet }}" require>
                                 </div>
                             </div>
                             <div class="card-footer">
