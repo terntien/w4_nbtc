@@ -41,10 +41,12 @@
                                 <div class="form-group">
                                     <label>ผู้ให้บริการ :</label>
                                     <select class="form-control" name="customer_select">
+
                                         @foreach($list as $row)
                                             <option value="{{ $row->id }}" {{$row->id == $tower->towers_customer  ? 'selected' : ''}}>  
                                                 {{$row->codecus}} : {{$row->namecus}}</option>
                                         @endforeach
+                                        
                                     </select>
                                 </div>
                                

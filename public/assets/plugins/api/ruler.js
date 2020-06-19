@@ -1,34 +1,3 @@
-/*
-	javascript ruler for google maps V3
-
-	by Giulio Pons. http://www.barattalo.it
-	this function uses the label class from Marc Ridley Blog
-	this function has been modified to allow double click to remove ruler, by  Bernhard Konrad 
-
-
-	--------------------------------------------------------------
-	instructions:
-
-		0. Register an API key on Google Maps to use the Google Maps 
-
-		1. In your HTML place a div with id "map_canvas".
-
-		2. On load of the page call a function to create the map, like this:
-			function startMap() {
-				var myOptions = {
-				  zoom: 10,
-				  center:  new google.maps.LatLng(45.5,9.2) ,
-				  mapTypeId: google.maps.MapTypeId.ROADMAP,
-				  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
-				};
-				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-			}
-		
-		3. Call "addruler();" function to add the ruler.
-	--------------------------------------------------------------
-
-*/
-
 
 
 function addruler() {

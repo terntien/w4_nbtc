@@ -163,7 +163,7 @@
             </li>
             <li class="nav-item has-treeview">
               <a href="{{ url ('laws') }}" class="nav-link">
-                <i class="nav-icon fas fa-chart-pie"></i>
+                <i class="nav-icon fas fa-book"></i>
                 <p>
                   กฎหมายที่เกี่ยวข้อง
                 </p>
@@ -171,17 +171,9 @@
             </li>
             <li class="nav-item has-treeview">
               <a href="{{ url ('licenses') }}" class="nav-link">
-                <i class="nav-icon fas fa-chart-pie"></i>
+                <i class="nav-icon fas fa fa-file-text"></i>
                 <p>
                   แบบฟอร์มขอใบอนุญาต
-                </p>
-              </a>
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="{{ url ('problem') }}" class="nav-link">
-                <i class="nav-icon fas fa-chart-pie"></i>
-                <p>
-                  ประเภทการแจ้งปัญหา
                 </p>
               </a>
             </li>
@@ -206,6 +198,12 @@
                   <a href="{{ url ('reports') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>ข้อมูลการแจ้งปัญหา</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url ('problem') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>ประเภทการแจ้งปัญหา</p>
                   </a>
                 </li>
               </ul>

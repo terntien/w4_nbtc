@@ -16,18 +16,19 @@
                                                 <select id="map-distance-start">
                                                     <option value="">เลือกจุดเริ่มวัด</option>
                                                     @foreach($tower as $row)
-                                                        <option value="{{$row->LATDEG}},{{$row->LONGDEG}}">{{$row->namecus}} {{$row->towers_license_code}} </option>
+                                                        <option value="{{$row->LATDEG}},{{$row->LONGDEG}}">{{$row->namecus}} : {{$row->towers_license_code}} </option>
                                                     @endforeach
                                                 </select>
+
                                                 <b>End: </b>
                                                 <select id="map-distance-end">
                                                     <option value="">เลือกจุดสิ้นสุดการวัด</option>
                                                     @foreach($tower as $row)
-                                                        <option value="{{$row->LATDEG}},{{$row->LONGDEG}}">{{$row->namecus}} {{$row->towers_license_code}} </option>
+                                                        <option value="{{$row->LATDEG}},{{$row->LONGDEG}}">{{$row->namecus}} : {{$row->towers_license_code}} </option>
                                                     @endforeach
                                                 </select>
-                                                    
-                                                </select>
+                                                <input onclick="removeLine();" type=button value="Remove line">
+ 
                                             </div>
                                    
                                         <div id="map"></div>  
@@ -81,6 +82,7 @@
                 mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
             };
             map = new google.maps.Map(document.getElementById("map"), myOptions);
+            
             var infoWindow = new google.maps.InfoWindow;
 
             downloadUrl('/xml-marker', function(data) {
@@ -151,7 +153,7 @@
         }
         initMap();
 
-        
+         
         function addruler(lat,lng,lat2,lng2) {
 
             ruler1 = new google.maps.Marker({
@@ -162,6 +164,7 @@
                 map: map,
                 draggable: true
             });
+            
 
             ruler2 = new google.maps.Marker({
                 position: new google.maps.LatLng(
@@ -169,26 +172,29 @@
                     parseFloat(lng2)
                 ),
                 map: map,
-                draggable: true
+                draggable: true,
+
             });
+           
         
             var ruler1label = new Label({ map: map });
             var ruler2label = new Label({ map: map });
+            
             ruler1label.bindTo('position', ruler1, 'position');
             ruler2label.bindTo('position', ruler2, 'position');
-        
+ 
             rulerpoly = new google.maps.Polyline({
                 path: [ruler1.position, ruler2.position] ,
                 strokeColor: "#FFFFF",
                 strokeOpacity: .7,
                 strokeWeight: 8
             });
+          
 
             // marker map distance
             rulerpoly.setMap(map);
             ruler1label.set('text',distance( ruler1.getPosition().lat(), ruler1.getPosition().lng(), ruler2.getPosition().lat(), ruler2.getPosition().lng()));
             ruler2label.set('text',distance( ruler1.getPosition().lat(), ruler1.getPosition().lng(), ruler2.getPosition().lat(), ruler2.getPosition().lng()));
-        
         }
         // addruler('16.432194','102.823624','16.483228','102.830085');
        
@@ -208,11 +214,13 @@
         }
         function doNothing() {}  
 
-
+        
+    
         $('#map-distance-start , #map-distance-end').change(function (e) { 
             
             var start = $('#map-distance-start').val();
             var end = $('#map-distance-end').val();
+            
             if (start == '') {
                 alert('โปรดเลือกจุดหมายวัดระยะให้ครบทั้งสอง');
                 return;
@@ -221,6 +229,9 @@
                 alert('โปรดเลือกจุดหมายวัดระยะให้ครบทั้งสอง');
                 return;
             }
+            
+          
+            
             if (start != '' && end != '') {
                 if (start == end) {
                     alert('ไม่สามารถวัดระยะทางได้ เนื่องเป็นจุดเดียวกัน');
@@ -229,13 +240,19 @@
                     start = start.split(',');
                     end = end.split(',');
                     console.log(start , end);
-                    addruler(start[0],start[1],end[0],end[1]);
-                }
+                    addruler(start[0],start[1],end[0],end[1]); 
+                    
+                } 
                 
             }
             ruler1.setMap(null);
             ruler2.setMap(null);
         });
+        function removeLine() {
+            window.location.reload();
+        }
        
+            
+		
     </script>
     @endsection

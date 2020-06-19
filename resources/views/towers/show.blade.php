@@ -37,14 +37,17 @@
 
                         @method('PATCH') 
                         @csrf
+               
                             <div class="card-body ">
                                 <div class="form-group">
                                     <label for="towers_customer">ผู้ให้บริการเครือข่าย :</label>
                                     {{ $tower->namecus }}
+                                
                                 </div>
                                 <div class="form-group">
                                     <label for="towers_network">ผู้ให้บริการเครือข่ายร่วม :</label>
                                     {{ $tower->namenet }}
+                                    
                                 </div>
                                 <div class="form-group">
                                     <label for="towers_parish">ตำบล :</label>
@@ -90,6 +93,7 @@
                                     </div>
                                 </div>
                             </div>
+        
                             <div class="card-footer">
                                 <a class="btn btn-primary" href="{{ url('/towers') }}">Back</a>
                             </div>
