@@ -38,8 +38,8 @@
                                                 @foreach($tower as $row)
                                                     <tr> 
                                                         <td style="width: 180px">{{$row->towers_license_code}}</td>
-                                                        <td style="width: 180px">{{$row->towers_customer}}</td>
-                                                        <td style="width: 180px">{{$row->towers_network}}</td>
+                                                        <td style="width: 180px">{{$row->namecus}}</td>
+                                                        <td style="width: 180px">{{$row->namenet}}</td>
                                                         <td style="width: 180px">{{$row->towers_pravince}}</td>
                                                         <td style="width: 180px">{{$row->towers_code}}</td>
                                                         <td style="width: 180px">{{$row->towers_license_date}}</td>

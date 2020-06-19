@@ -1,7 +1,8 @@
 <?php
 
 namespace App;
-
+use App\Customer;
+use App\Network;
 use Illuminate\Database\Eloquent\Model;
 
 class Tower extends Model
@@ -21,4 +22,12 @@ class Tower extends Model
         'towers_license_date'
 
     ];
+    public function customer(){
+        return $this->belongsTo(Customer::class,'towers_customer','id');
+    }
+
+    public function network(){
+        return $this->belongsTo(Network::class,'towers_network','id');
+    }
 }
+

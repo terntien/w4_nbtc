@@ -122,7 +122,7 @@
                 with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-map-marker"></i>
+                <i class="nav-icon fa fa-map-marker"></i>
                 <p>
                     เสาสัญญาณ
                   <i class="right fas fa-angle-left"></i>
@@ -182,7 +182,7 @@
                 <i class="nav-icon fa fa-exclamation-circle"></i>
                 <p>
                   การแจ้งปัญหา
-                  <span class="badge badge-info right">2</span>
+                  <span class="badge badge-info right"></span>
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
@@ -210,7 +210,7 @@
             </li>
             <li class="nav-item">
               <a href="{{ url ('contacts') }}" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fa fa-address-card"></i>
                 <p>
                   ติดต่อเรา
                 </p>
@@ -230,7 +230,7 @@
                         <a class="nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">
-                            <i class="nav-icon fas fa-th"></i>
+                            <i class="nav-icon fa fa-sign-out"></i>
                             <p>{{ __('Logout') }} </p>
                            
                         </a>

@@ -46,7 +46,6 @@
                                             <option value="{{ $row->id }}" {{$row->id == $tower->towers_customer  ? 'selected' : ''}}>  
                                                 {{$row->codecus}} : {{$row->namecus}}</option>
                                         @endforeach
-                                        
                                     </select>
                                 </div>
                                

@@ -11,10 +11,11 @@ class TowerController extends Controller
      public function index()
     {
         $tower = Tower::all();
-        // $tower = DB::table('towers')
-        //             ->join('customers', 'customers.id','=','towers.towers_customer')
-        //             ->join('networks', 'networks.id','=','towers.towers_network')
-        //             ->get();
+        $tower = DB::table('towers')
+                    ->join('customers', 'customers.id','=','towers.towers_customer')
+                        ->join('networks', 'networks.id','=','towers.towers_network')
+                            ->select('towers.*','namecus','namenet')
+                                ->get();
         return view('towers.index', compact('tower'));
     }
     
@@ -58,12 +59,10 @@ class TowerController extends Controller
 
     public function show($id)
     {
-        $tower = Tower::find($id);
-        // $tower = DB::table('towers')
-        //     ->join('customers', 'customers.id','=','towers.towers_customer')
-        //     ->join('networks', 'networks.id','=','towers.towers_network')
-        //     ->get();
        
+        $tower = Tower::find($id);
+
+
         return view('towers.show', compact('tower'));    
     }
 
@@ -76,10 +75,7 @@ class TowerController extends Controller
         $nets=DB::table('networks')->get();
 
         $tower = Tower::find($id);
-        // $tower = DB::table('towers')
-        //             ->join('customers', 'customers.id','=','towers.towers_customer')
-        //             ->join('networks', 'networks.id','=','towers.towers_network')
-        //             ->get();
+       
         return view('towers.edit' ,compact('tower', 'list','nets')); 
     }
 

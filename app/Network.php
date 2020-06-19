@@ -10,4 +10,7 @@ class Network extends Model
         'codenet',
         'namenet'
     ];
+    public function tower(){
+        return $this->hasMany(Tower::class);
+    }
 }

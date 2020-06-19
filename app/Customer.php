@@ -10,4 +10,7 @@ class Customer extends Model
         'codecus',
         'namecus'
     ];
+    public function tower(){
+        return $this->hasMany(Tower::class);
+    }
 }
