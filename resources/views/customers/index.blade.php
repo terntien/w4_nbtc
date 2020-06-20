@@ -81,13 +81,16 @@
                                             <tr> 
                                                 <td style="width: 180px">{{$row->codecus}}</td>
                                                 <td style="width: 180px">{{$row->namecus}}</td>
-                                                                  
+
+                                                <td id="btn" style="width: 20px">                        
+                                                    <a href="{{ route('customers.edit',$row->id)}}" class="btn btn-primary">Edit</a>                           
+                                                </td>        
                                                 <td id="btn" style="width: 20px">                      
-                                                <form action="{{ route('customers.destroy', $row->id)}}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="btn" type="submit"><i class="fa fa-trash-o" aria-hidden="true" style="font-size:24px; color:#C0392B;"></i></button>
-                                                </form>
+                                                    <form action="{{ route('customers.destroy', $row->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                        <button class="btn" type="submit"><i class="fa fa-trash-o" aria-hidden="true" style="font-size:24px; color:#C0392B;"></i></button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach

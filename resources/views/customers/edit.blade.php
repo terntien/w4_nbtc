@@ -11,7 +11,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">จัดการข้อมูลผู้ให้บริการ</li>
+                        <li class="breadcrumb-item active">จัดการข้อมูลเครือข่าย</li>
                         </ol>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                 <section class="col-lg-12 connectedSortable">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-ticodetle">ผู้ให้บริการ</h3>
+                            <h3 class="card-ticodetle">เครือข่าย</h3>
                         </div>
                         @if ($errors->any())
                         <div class="alert alert-danger">
@@ -34,18 +34,18 @@
                             </ul>
                         </div><br />
                         @endif
-                        <form method="POST" action="{{ route('licenses.update', $license->id) }}">
+                        <form method="POST" action="{{ route('customers.update', $customer->id) }}">
                         @method('PATCH') 
                         @csrf
                             <div class="card-body ">
                                 <div class="form-group col-md-12">
-                                    <label for="code">รหัสผู้ให้บริการ :</label>
-                                    <input type="text" class="form-control" name="code" value="{{ $license->codenet }}" required>
+                                    <label for="code">รหัสเครือข่าย :</label>
+                                    <input type="text" class="form-control" name="codecus" value="{{ $customer->codecus }}" required>
                                 </div>
                                 
                                 <div class="form-group col-md-12">
-                                    <label for="name">ผู้ให้บริการ :</label>
-                                    <input type="text" class="form-control" name="name" value="{{ $license->namenet }}" require>
+                                    <label for="name">เครือข่าย :</label>
+                                    <input type="text" class="form-control" name="namecus" value="{{ $customer->namecus }}" require>
                                 </div>
                             </div>
                             <div class="card-footer">

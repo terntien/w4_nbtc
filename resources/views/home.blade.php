@@ -27,7 +27,7 @@
                                                         <option value="{{$row->LATDEG}},{{$row->LONGDEG}}">{{$row->namecus}} : {{$row->towers_license_code}} </option>
                                                     @endforeach
                                                 </select>
-                                                <input onclick="removeLine();" type=button value="Remove line">
+                                                <input onclick="removeLine();" type=button value="ลบระยะทางทั้งหมด">
  
                                             </div>
                                    
@@ -74,9 +74,9 @@
         
         var map;
         function initMap() {
-            var origin = {lat: 16.436414, lng: 102.849966};
+            var origin = {lat: 16.432194, lng: 103.914167};
             var myOptions = {
-                zoom: 8,
+                zoom: 10,
                 center: origin,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
@@ -90,7 +90,7 @@
             xml = parser.parseFromString(data.responseText, "text/xml");
             var markers = xml.documentElement.getElementsByTagName('marker');
             Array.prototype.forEach.call(markers, function(markerElem) {
-                // console.log(markerElem);
+                console.log(markerElem);
                 var id = markerElem.getAttribute('id');
                 var typeleaf = markerElem.getAttribute('typeleaf');
                 var sending = markerElem.getAttribute('sending');
@@ -222,11 +222,11 @@
             var end = $('#map-distance-end').val();
             
             if (start == '') {
-                alert('โปรดเลือกจุดหมายวัดระยะให้ครบทั้งสอง');
+                alert('โปรดเลือกจุดหมาย Start เพื่อวัดระยะทาง');
                 return;
             }
             if (end == '') {
-                alert('โปรดเลือกจุดหมายวัดระยะให้ครบทั้งสอง');
+                alert('โปรดเลือกจุดหมาย End เพื่อวัดระยะทาง');
                 return;
             }
             

@@ -59,11 +59,16 @@ class TowerController extends Controller
 
     public function show($id)
     {
-       
+        $show = Tower::find($id);
+        
         $tower = Tower::find($id);
+        $tower = $tower->customer;
 
+        $tower2 = Tower::find($id);
+        $tower2 = $tower2->network;
 
-        return view('towers.show', compact('tower'));    
+        
+        return view('towers.show', compact('tower','tower2','show'));    
     }
 
     

@@ -45,49 +45,49 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="towers_network">ผู้ให้บริการเครือข่ายร่วม :</label>
-                                    {{ $tower->towers_network }} : {{ $tower->namenet }}
+                                    {{ $tower2->towers_network }} : {{ $tower2->namenet }}
                                 </div>
                                 <div class="form-group">
                                     <label for="towers_parish">ตำบล :</label>
-                                    {{ $tower->towers_parish }}
+                                    {{ $show->towers_parish }}
                                 </div>
                                 <div class="form-group">
                                     <label for="towers_district">อำเภอ :</label>
-                                    {{ $tower->towers_district }}
+                                    {{ $show->towers_district }}
                                 </div>
                                 <div class="form-group">
                                     <label for="towers_pravince">จังหวัด :</label>
-                                    {{ $tower->towers_pravince }}
+                                    {{ $show->towers_pravince }}
                                 </div>
                                 <div class="form-group">
                                     <label for="towers_code">รหัสไปรษณีย์ :</label>
-                                    {{ $tower->towers_code }}
+                                    {{ $show->towers_code }}
                                 </div>
                                 <div class="form-group">
                                     <label for="towers_license_code">รหัสใบอนุญาต :</label>
-                                    {{ $tower->towers_license_code }}
+                                    {{ $show->towers_license_code }}
                                 </div>
                                 <div class="form-group">
                                     <label for="towers_license_date">วันขอใบอนุญาต :</label>
-                                    {{ $tower->towers_license_date }}
+                                    {{ $show->towers_license_date }}
                                 </div>
                                 <div class="form-group">
                                     <label for="towers_typeleaf">ประเภทใบตั้ง :</label>
-                                    {{ $tower->towers_typeleaf }} 
+                                    {{ $show->towers_typeleaf }} 
                                 </div>
                                 <div class="form-group">
                                     <label for="towers_sending">กำลังส่ง :</label>
-                                    {{ $tower->towers_sending }}
+                                    {{ $show->towers_sending }}
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="LATDEG">Latitude :</label>
-                                        {{ $tower->LATDEG }}
+                                        {{ $show->LATDEG }}
                                     </div>
                                     
                                     <div class="form-group col-md-12">
                                         <label for="LONGDEG">Longitude</label>
-                                        {{ $tower->LONGDEG }}
+                                        {{ $show->LONGDEG }}
                                     </div>
                                 </div>
                             </div>
